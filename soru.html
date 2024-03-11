@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>İlişkimizdeki İlk Anılar - Test Sayfası</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            text-align: center;
+            padding: 50px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .choice {
+            padding: 15px 30px;
+            background-color: #f7b731;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .choice:hover {
+            background-color: #d4a73d;
+        }
+        .choice.selected {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .next-question {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f7b731;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .next-question:hover {
+            background-color: #d4a73d;
+        }
+    </style>
+</head>
+<body>
+    <div id="soru1">
+        <h2>Soru 1</h2>
+        <img src="soru1.PNG" alt="Soru 1 Resmi">
+        <div class="question">Bu ilk mesajı sana ne zaman attım?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 21 Ekim 2020</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 1 Kasım 2020</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 19 Ekim 2020</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 20 Ekim 2020</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru2')">Diğer Soruya Geç</button>
+    </div>
+
+    <div id="soru2" style="display: none;">
+        <h2>Soru 2</h2>
+        <img src="soru2.PNG" alt="Soru 2 Resmi">
+        <div class="question">Instagramdan bu mesajı sana ne zaman attım?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 1 Şubat 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 17 Ocak 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 2 Şubat 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 18 Ocak 2021</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru3')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru3" style="display: none;">
+        <h2>Soru 3</h2>
+        <img src="soru3.PNG" alt="Soru 3 Resmi">
+        <div class="question">Hikayeme bu şekilde ne zaman cevap vermiştin?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 3 Şubat 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 8 Şubat 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 10 Şubat 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 7 Şubat 2021</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru4')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru4" style="display: none;">
+        <h2>Soru 4</h2>
+        <img src="soru4.PNG" alt="Soru 4 Resmi">
+        <div class="question">İlk ne zaman seni sevdiğimi söyledim?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 9 Mart 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 10 Mart 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 11 Mart 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 12 Mart 2021</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru5')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru5" style="display: none;">
+        <h2>Soru 5</h2>
+        <img src="soru5.PNG" alt="Soru 5 Resmi" style="width: 50%;">
+        <div class="question">Sana hazırladığım bu websitesinde en son sayfaya koyduğum şarkı hangisiydi?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) Aşk Lazım</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) Bana Ellerini Ver</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) Ay Tenli Kadın</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) Bütün İstanbul Biliyor</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru6')">Diğer Soruya Geç</button>
+    </div>
+    <!-- Diğer soruları buraya ekleyebilirsiniz -->
+    <div id="soru6" style="display: none;">
+        <h2>Soru 6</h2>
+        
+        <div class="question">En sevdiğim Türk rock grubu?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) Badem</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) Malt</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) Kurban</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) Alizade</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru7')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru7" style="display: none;">
+        <h2>Soru 7</h2>
+        
+        <div class="question">Antalya tatilimizde tuttuğumuz ev hangi semtteydi?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) Lara</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) Altıntaş</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) Muratpaşa</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) Kemerağzı</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru8')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru8" style="display: none;">
+        <h2>Soru 8</h2>
+        
+        <div class="question">Kampta ilk izlediğimiz film hangisiydi?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) Enigma </button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) Alan Turing</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) Cryptology</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) Cyber</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru9')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru9" style="display: none;">
+        <h2>Soru 9</h2>
+       
+        <div class="question">İlk buluştuğumuz gün hangi hastanenin önünde buluşmuştuk?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) Özel Üsküdar Anadolu Hastanesi</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) Üsküdar Devlet Hastanesi</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) Marmara Üniversitesi Hastanesi</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) Validebağ Devlet Hastanesi</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru10')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru10" style="display: none;">
+        <h2>Soru 10</h2>
+        <div class="question">İlk buluştuğumuz tarih hangisi?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 12 Haziran 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 9 Haziran 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 14 Haziran 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 11 Haziran 2021</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru11')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru11" style="display: none;">
+        <h2>Soru 11</h2>
+        <img src="soru11.jpeg" style="width: 30%;">
+        <div class="question">İlk kez hikayeme bu fotomuzu koymuştum, bu foto hangi tarihten?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 19 Haziran 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 20 Haziran 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 21 Haziran 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 22 Haziran 2021</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru12')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru12" style="display: none;">
+        <h2>Soru 12</h2>
+        <img src="soru12.jpeg" style="width: 30%;" >
+        <div class="question">Bu foto hangi tarihten?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 26 Kasım</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 17 Kasım</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 3 Kasım</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 15 Kasım</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru13')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru13" style="display: none;">
+        <h2>Soru 13</h2>
+        <img src="soru13.jpg" >
+        <div class="question">İlk seks videomuzu çektiğimiz tarih?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) 1 Ocak 2022</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) 28 Aralık 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) 29 Aralık 2021</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) 18 Ocak 2022</button>
+        </div>
+        <button class="next-question" onclick="showNextQuestion('soru14')">Diğer Soruya Geç</button>
+    </div>
+    <div id="soru14" style="display: none;">
+        <h2>Soru 14</h2>
+        <div class="question">Siber güvenlik alanına başlamama sebep olan udemy'den aldığım kurs hangi alan ile ilgiliydi?</div>
+        <div class="choices">
+            <button class="choice" onclick="selectChoice(this, 'A')">A) Uygulama Güvenliği</button>
+            <button class="choice" onclick="selectChoice(this, 'B')">B) Sosyal Medya Hack</button>
+            <button class="choice" onclick="selectChoice(this, 'C')">C) Etik Hacker</button>
+            <button class="choice" onclick="selectChoice(this, 'D')">D) Kriptoloji</button>
+        </div>
+        <button class="next-question" onclick="finishTest()">Testi Bitir</button>
+    </div>
+    <div id="finish" style="display: none;">
+        <h2>Sonuç</h2>
+        <p id="resultMessage"></p>
+    </div>
+
+    <script>
+        let correctAnswers = {
+            soru1: 'C',
+            soru2: 'B',
+            soru3: 'D',
+            soru4: 'B',
+            soru5: 'D',
+            soru6: 'C',
+            soru7: 'C',
+            soru8: 'A',
+            soru9: 'B',
+            soru10: 'A',
+            soru11: 'D',
+            soru12: 'A',
+            soru13: 'D',
+            soru14: 'D'
+
+            // Diğer soruların doğru cevaplarını buraya ekleyebilirsiniz
+        };
+        let userAnswers = {};
+
+        function selectChoice(choice, answer) {
+            const questionId = choice.parentElement.parentElement.id;
+            userAnswers[questionId] = answer;
+            console.log(answer);
+            document.querySelectorAll('.choice').forEach(c => {
+                if (c !== choice) {
+                    c.classList.remove('selected');
+                }
+            });
+            choice.classList.toggle('selected');
+        }
+
+        function showNextQuestion(nextQuestionId) {
+            document.getElementById('soru1').style.display = 'none';
+            document.getElementById('soru2').style.display = 'none';
+            document.getElementById('soru3').style.display = 'none';
+            document.getElementById('soru4').style.display = 'none';
+            document.getElementById('soru5').style.display = 'none';
+            document.getElementById('soru6').style.display = 'none';
+            document.getElementById('soru7').style.display = 'none';
+            document.getElementById('soru8').style.display = 'none';
+            document.getElementById('soru9').style.display = 'none';
+            document.getElementById('soru10').style.display = 'none';
+            document.getElementById('soru11').style.display = 'none';
+            document.getElementById('soru12').style.display = 'none';
+            document.getElementById('soru13').style.display = 'none';
+            document.getElementById('soru14').style.display = 'none';
+            document.getElementById(nextQuestionId).style.display = 'block';
+        }
+
+        function calculatePercentage() {
+            let correctCount = 0;
+            let falseCount = 0;
+            for (const questionId in userAnswers) {
+                if (userAnswers.hasOwnProperty(questionId)) {
+                    if (userAnswers[questionId] === correctAnswers[questionId]) {
+                        correctCount++;
+                        
+                    }
+                    else{
+                        falseCount++;
+                    }
+                    
+                    
+                }
+            }
+            console.log(correctCount);
+            console.log(falseCount);
+            console.log(userAnswers);
+            const totalQuestions = Object.keys(correctAnswers).length;
+            const percentage = (correctCount / totalQuestions) * 100;
+            return percentage;
+        }
+
+        function finishTest() {
+            const percentage = calculatePercentage();
+            let message;
+            if (percentage >= 70) {
+                message = "Testi geçtiniz! Teşekkür ederim canım sevgilim beni çok seviyorsun ❤️ \n 3. yılımız kutlu olsun sevgilim. Bu 3 yılda bana yaşattığın her şey için tekrardan çok teşekkür ederim. Umarım bu minik oyunu oynarken keyif almışsındır. Soru bulmaya çalıştım 2 gece boyunca. Eski mesajlara fotolara gittim. Eski mesajlları görünce çok duygulandım sevgilim. Seni her şeyden çok seviyorum.\n Nice aşk dolu yıllara❤️";
+            } else {
+                message = "Testi geçemediniz... Kalbimi kırdınız sevgilim...";
+            }
+            document.getElementById('resultMessage').textContent = message;
+            document.getElementById('finish').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
